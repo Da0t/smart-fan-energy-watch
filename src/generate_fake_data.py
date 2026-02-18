@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime, timedelta
 
 # --- Parameters ---
-duration_minutes = 120  # 2 hours
+duration_minutes = 240  # 2 hours
 start_time = datetime(2026, 2, 7, 14, 0, 0)
 
 session_id = "trial1"
