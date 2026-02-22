@@ -11,3 +11,5 @@ st.title("Smart Fan Energy Watch")
 # Connect to Supabase
 SUPABASE_URL = st.secrets["https://fmhxjiqadxdlmalscvoc.supabase.co"]
 SUPABASE_KEY = st.secrets["sb_publishable_QIs5RteU49_YkZ35JoEfRQ_T2UHVhV_"]
+
+d
