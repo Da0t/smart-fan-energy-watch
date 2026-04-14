@@ -1,5 +1,14 @@
 "use client";
+
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const NAV_ITEMS = [
+  { label: "Overview", href: "#top" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Highlights", href: "#features" },
+  { label: "Dashboard", href: "#dashboard" },
+];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,31 +20,38 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -18, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={scrolled ? { background: "rgba(15,15,15,0.92)", backdropFilter: "blur(14px)", borderBottom: "1px solid #1c1c1c" } : {}}
+      style={scrolled ? { background: "rgba(15,15,15,0.9)", backdropFilter: "blur(18px)", borderBottom: "1px solid #1c1c1c" } : {}}
     >
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#ffffff" }}>
-          Smart Fan <span style={{ color: "#84cc16" }}>Energy</span> Watch
-        </div>
-        <div className="hidden md:flex items-center gap-8">
-          {["How It Works", "Features", "Dashboard"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-              style={{ fontSize: "0.88rem", color: "#666666", fontWeight: 500, textDecoration: "none", transition: "color 0.15s" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#666666")}
-            >
-              {item}
+      <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, minHeight: 74 }}>
+        <a href="#top" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", minWidth: 0 }}>
+          <div className="brand-mark">WA</div>
+          <div style={{ minWidth: 0 }}>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.98rem", color: "#ffffff", lineHeight: 1.1 }}>
+              IoT Energy Monitor
+            </div>
+            <div style={{ fontSize: "0.72rem", color: "#666666", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: 4 }}>
+              Adaptive fan analytics
+            </div>
+          </div>
+        </a>
+
+        <div className="nav-links">
+          {NAV_ITEMS.map((item) => (
+            <a key={item.label} href={item.href} className="nav-link">
+              {item.label}
             </a>
           ))}
         </div>
-        <a href="#dashboard" className="btn-primary" style={{ padding: "8px 20px", fontSize: "0.84rem" }}>
-          View Live
+
+        <a href="#dashboard" className="btn-primary" style={{ padding: "10px 18px", fontSize: "0.84rem", whiteSpace: "nowrap" }}>
+          Open Dashboard
         </a>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

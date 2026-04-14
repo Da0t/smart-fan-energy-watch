@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Smart Fan Energy Watch",
-  description: "Real-time IoT energy monitoring powered by ESP32, Supabase & weather-adaptive intelligence.",
+  title: "Weather-Adaptive IoT Energy Monitor",
+  description: "Indoor fan telemetry, adaptive thresholds, and energy insight in one interface.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

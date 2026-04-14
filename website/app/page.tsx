@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main style={{ background: "#0f0f0f", minHeight: "100vh" }}>
+    <main style={{ minHeight: "100vh" }}>
       <Nav />
       <Hero />
       <HowItWorks />
