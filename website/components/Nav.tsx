@@ -29,7 +29,11 @@ export default function Nav() {
     >
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, minHeight: 74 }}>
         <a href="#top" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", minWidth: 0 }}>
-          <div className="brand-mark">WA</div>
+          <div className="brand-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 2L3 13h7l-2 9 13-12h-8L13 2z" fill="#d9f99d"/>
+            </svg>
+          </div>
           <div style={{ minWidth: 0 }}>
             <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.98rem", color: "#ffffff", lineHeight: 1.1 }}>
               IoT Energy Monitor

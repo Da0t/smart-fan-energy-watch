@@ -55,13 +55,8 @@ h1, h2, h3, h4 {
   border-radius: 12px;
   border: 1px solid rgba(132, 204, 22, 0.28);
   background: linear-gradient(180deg, rgba(132, 204, 22, 0.18) 0%, rgba(132, 204, 22, 0.04) 100%);
-  color: #d9f99d;
   display: grid;
   place-items: center;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
   flex-shrink: 0;
 }
 
